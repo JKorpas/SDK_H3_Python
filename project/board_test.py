@@ -25,3 +25,6 @@ class BoardTest(unittest.TestCase):
 
     def test_should_return_null_when_pick_coordinates_with_no_monster(self):
         self.assertRaises(KeyError, self.board.get, 0,3)
+
+    def test_cannot_add_creature_at_busy_corrdinates(self):
+        pass

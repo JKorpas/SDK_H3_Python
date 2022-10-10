@@ -26,8 +26,8 @@ if __name__ == '__main__':
     plansza = Board()
     plansza.add((0, 2), "Centaur")
     plansza.add((0, 3), "Dupa")
-    plansza.add("dupa", 6)
-    plansza.get(0,4)
-    print(plansza.get(0,4))
+    plansza.add((0, 3), "asdas")
+    #plansza.get(0,4)
+    print(plansza.get(0,3))
 
 
