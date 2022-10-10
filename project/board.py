@@ -1,13 +1,15 @@
 
 from creature import Creature
 from point import Point
-
+from custom_exceptions import IllegalCorrdinatesExceptions
 
 class Board():
     def __init__(self):
         self.map = dict()
 
     def add(self, coordinates, monster):
+        if coordinates in self.map.keys():
+            raise IllegalCorrdinatesExceptions
         self.map[coordinates] = monster
 
     def get(self, x, y):

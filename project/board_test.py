@@ -2,7 +2,7 @@ import unittest
 from board import Board
 from point import Point
 from creature import Creature
-
+from custom_exceptions import *
 
 class BoardTest(unittest.TestCase):
 
@@ -27,4 +27,4 @@ class BoardTest(unittest.TestCase):
         self.assertRaises(KeyError, self.board.get, 0,3)
 
     def test_cannot_add_creature_at_busy_corrdinates(self):
-        pass
+        self.assertRaises(IllegalCorrdinatesExceptions, self.board.add, (0, 2), "Creature") 
