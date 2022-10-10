@@ -8,8 +8,7 @@ class Board():
         self.map = dict()
 
     def add(self, coordinates, monster):
-        if coordinates in self.map.keys():
-            raise IllegalCoordinatesExceptions
+        self.throw_IllegalCoordinatesExceptions(coordinates)
         self.map[coordinates] = monster
 
     def get(self, coordinates):
@@ -18,9 +17,12 @@ class Board():
         return self.map[coordinates]
 
     def move(self, current_coordinates, new_coordinates):
-        if (new_coordinates) in self.map.keys():
-            raise IllegalCoordinatesExceptions
+        self.throw_IllegalCoordinatesExceptions(new_coordinates)
         self.map[new_coordinates] = self.map.pop(current_coordinates)
+
+    def throw_IllegalCoordinatesExceptions(self, coordinates):
+        if coordinates in self.map.keys():
+            raise IllegalCoordinatesExceptions
     def __eq__(self, other: object) -> bool:
         """Overrides the default implementation. Can be unnessescary"""
         if isinstance(other, Point):

@@ -45,6 +45,5 @@ class BoardMovingCreatureTest(unittest.TestCase):
         self.assertRaises(KeyError, self.board.get, (0,2))
 
     def test_where_monster_move_on_busy_spot(self):
-        monster_from_board = self.board.add((1,1), "Imp")
         self.assertRaises(IllegalCoordinatesExceptions, self.board.move, (1,1), (0,2))
 
