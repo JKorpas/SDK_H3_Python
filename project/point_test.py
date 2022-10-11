@@ -1,8 +1,7 @@
 import unittest
-#from board import Board
+
 from point import Point
-#from creature import Creature
-#from custom_exceptions import *
+
 
 class TestPoint(unittest.TestCase):
 
