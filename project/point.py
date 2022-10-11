@@ -3,36 +3,36 @@ BOARD_HEIGHT = 15
 
 
 class Point:
-    def __init__(self, x_axis, y_axis):
-        self._x_axis = x_axis
-        self._y_axis = y_axis
+    def __init__(self, x_cor=0, y_cor=0):
+        self.x_axis = x_cor
+        self.y_axis = y_cor
 
     @property
     def x_axis(self):
         return self._x_axis
 
     @x_axis.setter
-    def x_axis(self, value):
-        if not isinstance(value, int):
+    def x_axis(self, value_x):
+        if not isinstance(value_x, int):
             raise TypeError("Bad type of x-cor")
-        if 0 <= value <= BOARD_WIDTH:
+        if (value_x < 0) or (value_x > BOARD_WIDTH):
             raise ValueError("X-cor should be between 0 and 20")
-        self._x_axis = value
+        self._x_axis = value_x
 
     @property
     def y_axis(self):
         return self._y_axis
 
     @y_axis.setter
-    def y_axis(self, value):
-        if not isinstance(value, int):
+    def y_axis(self, value_y):
+        if not isinstance(value_y, int):
             raise TypeError("Bad type of y-cor")
-        if 0 <= value <= BOARD_HEIGHT:
+        if (value_y < 0) or (value_y > BOARD_HEIGHT):
             raise ValueError("y-cor should be between 0 and 15")
-        self._y_axis = value
+        self._y_axis = value_y
 
     def __repr__(self) -> str:
-        return f"X: {self._x_axis} Y: {self._y_axis}"
+        return f"{self._x_axis, self.y_axis}"
 
     def __hash__(self):
         return hash((self.get()))
@@ -42,6 +42,12 @@ class Point:
             return self._x_axis == other._x_axis and self._y_axis == other._y_axis
         return NotImplemented
 
-    #Wrapper to make test easier to read
+    # Wrapper to make test easier to read
     def get(self):
         return (self._x_axis, self._y_axis)
+
+
+'''        if (value_y >= 0) and (value_y <= BOARD_HEIGHT):
+            raise ValueError("y-cor should be between 0 and 15")'''
+'''        if (value_x >= 0) and (value_x <= BOARD_WIDTH):
+            raise ValueError("X-cor should be between 0 and 20")'''

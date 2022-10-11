@@ -37,9 +37,9 @@ class Board():
 
 if __name__ == '__main__':
     plansza = Board()
-    stwor = Creature("Centaur")
-    punkt = Point(0,2)
-    plansza.add(Point(0,2), stwor.name)
+    stwor = Creature("Pikinier")
+    punkt = Point(1,2)
+    plansza.add(Point(20,15), Creature("Pikinier"))
     print(plansza.map)
 
 
@@ -50,6 +50,3 @@ if __name__ == '__main__':
             raise ValueError("y-cor should be between 0 and 15")
         if not isinstance(coordinates._x, int) and isinstance(coordinates._y, int):
             raise TypeError("Bad type of coordinatess")"""
-
-
-"""    Overrides the default implementation. Can be unnessescary """
