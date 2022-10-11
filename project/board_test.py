@@ -19,31 +19,13 @@ class BoardTest(unittest.TestCase):
         self.assertEqual(self.creature.name, 'Centaur')
     
     def test_add_creature_to_board(self):
-        self.board.add((self.point.x, self.point.y), self.creature.name)
+        self.board.add((self.point._x_axis, self.point._y_axis), self.creature.name)
         monster_from_board = self.board.get((0,2))
-        self.assertEqual(self.board.map[self.point.x, self.point.y], monster_from_board)
+        self.assertEqual(self.board.map[self.point._x_axis, self.point._y_axis], monster_from_board)
 
-    def test_should_return_null_when_pick_coordinates_with_no_monster(self):
-        self.assertRaises(KeyError, self.board.get, (0,3))
+    def test_should_return_keyerror_when_pick_coordinates_with_no_monster(self):
+        self.assertRaises(EmptyCooridinatesExceptions, self.board.get, (0,3))
 
     def test_cannot_add_creature_at_busy_corrdinates(self):
         self.assertRaises(IllegalCoordinatesExceptions, self.board.add, (0, 2), "Creature") 
-
-
-class BoardMovingCreatureTest(unittest.TestCase):
-
-    def setUp(self):
-        self.board = Board()
-        self.point = Point(0, 2)
-        self.creature = Creature("Centaur")
-        self.board.add((self.point.x, self.point.y), self.creature.name)
-
-    def test_where_monster_move_on_empty_spot(self):
-        self.board.move((0,2), (0,4))
-        monster_from_board = self.board.get((0,4))
-        self.assertEqual(self.board.map[0, 4], monster_from_board)
-        self.assertRaises(KeyError, self.board.get, (0,2))
-
-    def test_where_monster_move_on_busy_spot(self):
-        self.assertRaises(IllegalCoordinatesExceptions, self.board.move, (1,1), (0,2))
 
