@@ -1,8 +1,8 @@
 import unittest
-from board import Board
-from point import Point
-from creature import Creature
-from custom_exceptions import *
+from project.board import Board
+from project.point import Point
+from project.creature import Creature
+from project.custom_exceptions import *
 
 
 class BoardMovingCreatureTest(unittest.TestCase):
