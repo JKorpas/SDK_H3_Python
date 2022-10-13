@@ -41,12 +41,3 @@ if __name__ == '__main__':
     punkt = Point(1,2)
     plansza.add(Point(20,15), Creature("Pikinier"))
     print(plansza.map)
-
-
-
-"""        if 0 <= coordinates._x <= BOARD_WIDTH:
-            raise ValueError("X-cor should be between 0 and 20")
-        if 0 <= coordinates._y <= BOARD_HEIGHT:
-            raise ValueError("y-cor should be between 0 and 15")
-        if not isinstance(coordinates._x, int) and isinstance(coordinates._y, int):
-            raise TypeError("Bad type of coordinatess")"""
