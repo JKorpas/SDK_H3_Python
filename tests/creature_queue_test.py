@@ -1,6 +1,6 @@
 import unittest
-from creature import Creature
-from creature_queue import CreatureQueue
+from project.creature import Creature
+from project.creature_queue import CreatureQueue
 
 
 class TestCreatureQueue(unittest.TestCase):
