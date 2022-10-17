@@ -8,7 +8,10 @@ class Creature:
         self.current_hp = self.stats.max_hp
 
     def attack(self, defender: object) -> int:
-        defender.current_hp = defender.current_hp - (self.stats.attack - defender.stats.armor)
+        if self.stats.attack <= defender.stats.armor:
+             defender.current_hp = defender.current_hp
+        else:
+            defender.current_hp = defender.current_hp - (self.stats.attack - defender.stats.armor)
 
     def get_current_hp(self):
         return self.current_hp
