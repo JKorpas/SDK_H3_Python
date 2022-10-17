@@ -8,10 +8,21 @@ class Creature:
         self.current_hp = self.stats.max_hp
 
     def attack(self, defender: object) -> int:
-        if self.stats.attack <= defender.stats.armor:
-             defender.current_hp = defender.current_hp
+        if self.is_alive():
+            if self.stats.attack <= defender.stats.armor:
+                defender.current_hp = defender.current_hp
+            else:
+                defender.current_hp = defender.current_hp - (self.stats.attack - defender.stats.armor)
+
+    def counter_attack(self, attacker: object):
+        if self.stats.attack <= attacker.stats.armor:
+            attacker.current_hp = attacker.current_hp
         else:
-            defender.current_hp = defender.current_hp - (self.stats.attack - defender.stats.armor)
+            attacker.current_hp = attacker.current_hp - (self.stats.attack - attacker.stats.armor) 
+
+
+    def is_alive(self) -> bool:
+        return self.current_hp > 0
 
     def get_current_hp(self):
         return self.current_hp
