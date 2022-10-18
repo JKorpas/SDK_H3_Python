@@ -16,9 +16,9 @@ class BoardMovingCreatureTest(unittest.TestCase):
 
     def test_where_monster_move_on_empty_spot(self):
         self.board.move((0, 2), (0, 4))
-        monster_from_board = self.board.get((0, 4))
+        monster_from_board = self.board.get_creature((0, 4))
         self.assertEqual(self.board.map[0, 4], monster_from_board)
-        self.assertRaises(EmptyCooridinatesExceptions, self.board.get, (0, 2))
+        self.assertRaises(EmptyCooridinatesExceptions, self.board.get_creature, (0, 2))
 
     def test_where_monster_move_on_taken_spot(self):
         self.board.add(Point(0,4), Creature())

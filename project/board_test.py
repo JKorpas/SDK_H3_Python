@@ -23,12 +23,12 @@ class BoardTest(unittest.TestCase):
     def test_add_creature_to_board(self):
         self.board.add((self.point._x_axis, self.point._y_axis),
                        self.creature.name)
-        monster_from_board = self.board.get((0, 2))
+        monster_from_board = self.board.get_creature((0, 2))
         self.assertEqual(
             self.board.map[self.point._x_axis, self.point._y_axis], monster_from_board)
 
     def test_should_return_keyerror_when_pick_coordinates_with_no_monster(self):
-        self.assertRaises(EmptyCooridinatesExceptions, self.board.get, (0, 3))
+        self.assertRaises(EmptyCooridinatesExceptions, self.board.get_creature, (0, 3))
 
     def test_cannot_add_creature_at_busy_corrdinates(self):
         self.assertRaises(IllegalCoordinatesExceptions,
