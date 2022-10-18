@@ -25,6 +25,9 @@ class Board():
             if creature == value:
                 return key
     
+    def move_to_point(self, creature, point):
+        self.move(self.get_cords(creature), point)
+    
     def move(self, current_coordinates: Point, new_coordinates: Point):
         self.throw_IllegalCoordinatesExceptions(new_coordinates)
         self.map[new_coordinates] = self.map.pop(current_coordinates)
