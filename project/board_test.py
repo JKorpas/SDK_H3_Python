@@ -33,3 +33,16 @@ class BoardTest(unittest.TestCase):
     def test_cannot_add_creature_at_busy_corrdinates(self):
         self.assertRaises(IllegalCoordinatesExceptions,
                           self.board.add, (0, 2), "Creature")
+
+class BoardTest2(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        cls.board = Board()
+        cls.point = Point(0, 2)
+        cls.creature = Creature("Centaur")
+        cls.board.add(cls.point, cls.creature)
+        
+    def test_error_should_retrive_cords(self):
+        self.assertEqual(Point(0,2), self.board.get_cords(self.creature))
+        

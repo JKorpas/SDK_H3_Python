@@ -1,4 +1,5 @@
 from typing import Type
+from xml.etree.ElementTree import ProcessingInstruction
 from custom_exceptions import IllegalCoordinatesExceptions,EmptyCooridinatesExceptions
 from point import Point
 from creature import Creature
@@ -19,6 +20,11 @@ class Board():
     def get(self, coordinates: Point):
         self.throw_EmptyCooridinatesExceptions(coordinates)
         return self.map[coordinates]
+
+    def get_cords(self, creature) -> Point:
+        for key, value in self.map.items():
+            if creature == value:
+                return key
 
     def move(self, current_coordinates: Point, new_coordinates: Point):
         self.throw_IllegalCoordinatesExceptions(new_coordinates)
