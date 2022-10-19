@@ -1,4 +1,4 @@
-from typing import Type
+from functools import singledispatch
 from custom_exceptions import IllegalCoordinatesExceptions,EmptyCooridinatesExceptions
 from point import Point
 from creature import Creature
@@ -15,11 +15,19 @@ class Board():
     def add(self, coordinates: Point, monster="None"):
         self.throw_IllegalCoordinatesExceptions(coordinates)
         self.map[coordinates] = monster
-
-    def get(self, coordinates: Point):
+        
+    def get_creature(self, coordinates: Point):
         self.throw_EmptyCooridinatesExceptions(coordinates)
         return self.map[coordinates]
 
+    def get_cords(self, creature) -> Point:
+        for key, value in self.map.items():
+            if creature == value:
+                return key
+    
+    def move_to_point(self, creature, point):
+        self.move(self.get_cords(creature), point)
+    
     def move(self, current_coordinates: Point, new_coordinates: Point):
         self.throw_IllegalCoordinatesExceptions(new_coordinates)
         self.map[new_coordinates] = self.map.pop(current_coordinates)
