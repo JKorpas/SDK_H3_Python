@@ -3,7 +3,7 @@ Figure it out why tests in other folder do not run properly
 
 In PROGRESS :
 
-Wizualization, GUI 
+Vizualization, GUI 
 
 DONE: 
 
