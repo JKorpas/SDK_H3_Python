@@ -1,13 +1,9 @@
 TODO: 
 Figure it out why tests in other folder do not run properly
 
-Creature can counter attack
-
-Creature can pass 
-
 In PROGRESS :
 
-Creature Can attack 
+Wizualization, GUI 
 
 DONE: 
 
@@ -18,3 +14,9 @@ Creature statistic
 Creature Queue 
 
 Creature Movement
+
+Creature can counter attack
+
+Creature can pass 
+
+Creature Can attack 
