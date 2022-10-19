@@ -24,3 +24,9 @@ class GameEngine:
             
     def move(self, target_point):
         self.board.move(self.queue.get_active_creature(), target_point)
+        
+    def pass_turn(self):
+        self.queue.next()
+        
+    def attack(self, x, y):
+        self.queue.get_active_creature().attack(self.board(x, y))
