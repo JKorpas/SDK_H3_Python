@@ -8,7 +8,8 @@ class CreatureQueue:
         
     def init_queue(self):
         self.creatures_queue = self.creatures.copy()
-
+        self.reset_creature_counterattack_flag()
+        
     def get_active_creature(self):
         return self.active_creature
 
@@ -17,3 +18,7 @@ class CreatureQueue:
         if len(self.creatures_queue) == 0:
             self.init_queue()
         self.active_creature = self.creatures_queue.pop(0)
+
+    def reset_creature_counterattack_flag(self):
+        for creature in self.creatures_queue:
+            creature.counter_attack_flag = False
