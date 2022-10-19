@@ -1,4 +1,3 @@
-
 class CreatureQueue:
     def __init__(self, creature_list):
         self.creatures = creature_list

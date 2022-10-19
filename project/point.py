@@ -30,10 +30,12 @@ class Point:
         if (value_y < 0) or (value_y > BOARD_HEIGHT):
             raise ValueError("y-cor should be between 0 and 15")
         self._y_axis = value_y
-    #Easier to read func
+    # Easier to read func
+
     def __repr__(self) -> str:
         return f"{self._x_axis, self.y_axis}"
-    #Allow object of this class to be part of dict
+    # Allow object of this class to be part of dict
+
     def __hash__(self):
         return hash((self.get()))
 

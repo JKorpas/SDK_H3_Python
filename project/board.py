@@ -1,4 +1,3 @@
-from functools import singledispatch
 from custom_exceptions import IllegalCoordinatesExceptions,EmptyCooridinatesExceptions
 from point import Point
 from creature import Creature

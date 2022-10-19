@@ -37,8 +37,3 @@ class Creature:
         return f"{self.__dict__}"
     def __hash__(self):
         return hash((self.__dict__))
-
-
-attacker = Creature ("Attacker", 10, 2, 100, 5)
-defender = Creature ("Defender", 5, 5, 100, 5)
-attacker

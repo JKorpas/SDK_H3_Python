@@ -5,33 +5,36 @@ class CreatureStatistic:
         self.armor = c_armor
         self.max_hp = c_max_hp
         self.speed = c_speed
-        
+
     @property
     def name(self):
         return self._name
+
     @name.setter
     def name(self, value):
-        if not isinstance(value,str):
+        if not isinstance(value, str):
             raise TypeError("String name for creature")
         self._name = value
-    
+
     @property
     def attack(self):
         return self._attack
+
     @attack.setter
     def attack(self, value):
-        if not isinstance(value,int):
+        if not isinstance(value, int):
             raise TypeError("Enter integer value")
         if value < 0:
             raise ValueError("Give positive number")
         self._attack = value
-        
+
     @property
     def armor(self):
         return self._armor
+
     @armor.setter
     def armor(self, value):
-        if not isinstance(value,int):
+        if not isinstance(value, int):
             raise TypeError("Enter integer value")
         if value < 0:
             raise ValueError("Give positive number")
@@ -40,9 +43,10 @@ class CreatureStatistic:
     @property
     def max_hp(self):
         return self._max_hp
+
     @max_hp.setter
     def max_hp(self, value):
-        if not isinstance(value,int):
+        if not isinstance(value, int):
             raise TypeError("Enter integer value")
         if value < 0:
             raise ValueError("Give positive number")
@@ -51,11 +55,11 @@ class CreatureStatistic:
     @property
     def speed(self):
         return self._speed
+
     @speed.setter
     def speed(self, value):
-        if not isinstance(value,int):
+        if not isinstance(value, int):
             raise TypeError("Enter integer value")
         if value < 0:
             raise ValueError("Give positive number")
         self._speed = value
-        

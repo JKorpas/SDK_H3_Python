@@ -1,6 +1,6 @@
 from board import Board
-from creature import Creature
-from point import Point
+#from creature import Creature
+#from point import Point
 from creature_queue import CreatureQueue
 from project.board import BOARD_WIDTH
 
