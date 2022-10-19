@@ -1,0 +1,2 @@
+Kwestia overloadingu funckji w klasie Board. powinna byc jedna metoda get i w zależnosci od parametru wchodzacego do funkcji powinna byc wykonywana akcja
+Kwestia hermetyzacji, point creature creature statistic board powinno byc prywatne, gdyż wszystkie potrzebne metody sa wyprowadzone do klasy GameEngine 
